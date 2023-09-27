@@ -102,7 +102,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 context.delete(sonuc)
                                 
                                 idler.remove(at: indexPath.row)
-                                uyariFonk(baslik: "Konum Silindi", icerik: "'\(isimler[indexPath.row])' Konumlardan silindi.")
                                 
                                 isimler.remove(at: indexPath.row)
                                 
@@ -124,22 +123,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    func uyariFonk (baslik:String , icerik:String){
-        
-        let uyariMesaji = UIAlertController(title: baslik, message: icerik, preferredStyle: UIAlertController.Style.actionSheet)
-        
-        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (UIAlertAction) in
-            //OK butonuna tıklanınca olacaklar
-            
-            print("OK Tıklandı")
-        }
-        
-        uyariMesaji.addAction(okButton)
-        
-        self.present(uyariMesaji, animated: true , completion: nil)
-        
-    }
-
     
     
     @objc func addButton(){
